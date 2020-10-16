@@ -22,5 +22,5 @@ phases:
       - terraform --version
       - cd terraform-lambda/terraform
       - terraform init 
-      # - terraform plan 
-      # - terraform apply
+      - terraform plan 
+      - terraform apply -auto-approve
