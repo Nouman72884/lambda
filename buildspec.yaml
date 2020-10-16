@@ -20,8 +20,7 @@ phases:
   build:
     commands:
       - terraform --version
-      - ls
-      - cd terraform
+      - cd terraform-lambda
       - terraform init 
       # - terraform plan 
       # - terraform apply
