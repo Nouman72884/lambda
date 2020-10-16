@@ -16,4 +16,4 @@ Resources:
       FunctionName: "hello_func"
       Handler: "index.handler"
       Role: "arn:aws:iam::020046395185:role/AWSCloudFormationStackSetAdministrationRole"
-      Runtime: "python3.8"
+      Runtime: "python3.7"
