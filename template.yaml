@@ -15,5 +15,34 @@ Resources:
                 }
       FunctionName: "hello_func"
       Handler: "index.handler"
-      Role: "arn:aws:iam::020046395185:role/AWSCloudFormationStackSetAdministrationRole"
+      Role: !Ref AccessRole
       Runtime: "python3.7"
+
+  AccessRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:      # required
+        Statement:
+          -
+            Effect: "Allow"
+            Principal:
+              Service:
+                - "cloudformation.amazonaws.com"
+            Action:
+              - "sts:AssumeRole"
+      Path: '/'     # optional
+
+  AccessRolePolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:      # required
+        Statement:
+          -
+            Effect: "Allow"
+            Action: "*"
+            Resource: "*"
+      PolicyName: AccessRolePolicy     # required
+      Roles:            # optional, list of String
+        - Ref: AccessRole
+
+  
