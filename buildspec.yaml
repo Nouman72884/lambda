@@ -19,6 +19,7 @@ phases:
       - . /tmp/cred.txt
   build:
     commands:
+      - ls
       - terraform --version
       - cd terraform-lambda/terraform
       - terraform init 
