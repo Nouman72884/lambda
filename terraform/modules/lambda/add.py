@@ -22,7 +22,7 @@ def lambda_handler(event, context):
         )
         return {
             'statusCode': 200,
-            'body': json.dumps('Succesfully inserted employee!'),
+            'body': json.dumps('Succesfully inserted employee!!!!!'),
             'employee_id': employee_id
         }
     except:
